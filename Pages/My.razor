@@ -1,0 +1,21 @@
+﻿@page "/my"
+
+<div class="bg-light text-dark p-3 rounded-1">
+    <div class="d-flex align-items-center gap-2 mb-2">
+        <input class="form-control" @bind-value="@person.name" placeholder="имя"/>
+        <input class="form-control" @bind-value="@person.lastName" placeholder="фамилия" />
+        <input type="number" class="form-control" @bind-value="@person.age" placeholder="имя" />
+    </div>
+    Меня зовут @person.name @person.lastName, мне @person.age года
+</div>
+
+@code {
+    class Person
+    {
+        public String ?name { get; set; }
+        public String ?lastName{ get; set; }
+        public int age{ get; set; }
+    }
+
+    Person person = new Person() {name= "Сергей", lastName= "Горбулёв", age= 42 };
+}
